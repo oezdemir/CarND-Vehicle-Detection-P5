@@ -67,9 +67,11 @@ An example classification after runnig the classifier with a sliding window:
 ![](img/detection_boxes.png)
 
 This can be converted into a heatmap:
+
 ![](img/heatmap.png)
 
 At this stage we can use a thresholding to eliminate random detection of cars (We expect multiple detection on the same region, ares with "low heat" can be filtered out). After thresholding we can draw a bounding box of connected "hot" regions:
+
 ![](img/detection_combined.png)
 
 
@@ -80,6 +82,7 @@ I tried different color spaces, and different paramenters for HOG to tweak my de
 I used multiple window sizes (scales) per image that increased the accuracy at a cost of performance (multiple sliding window searches).
 
 Example of multiple window sizes (90x90, 96x96, 102x102 pixels) compared to the result above that has only one window size (96x96):
+
 ![](img/multiple_scales.png)
 
 To further reduce false positives, I restricted the region of search only to the bottom half of the image where cars can appear.
